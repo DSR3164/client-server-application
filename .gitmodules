@@ -1,0 +1,3 @@
+[submodule "CommApps"]
+	path = CommApps
+	url = https://github.com/DSR3164/CommApps
