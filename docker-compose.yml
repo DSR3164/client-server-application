@@ -1,0 +1,26 @@
+services:
+  api:
+    build: ./backend
+    container_name: api_service
+    network_mode: host
+    environment:
+      DB_HOST: localhost
+      DB_NAME: telecomdb
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+    command: python api.py
+    restart: unless-stopped
+
+  server:
+    build: ./backend
+    container_name: server_service
+    network_mode: host
+    environment:
+      DB_HOST: localhost
+      DB_NAME: telecomdb
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+    command: python server.py
+    restart: unless-stopped

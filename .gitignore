@@ -2,3 +2,7 @@
 !/**/
 !*.*
 !*.md
+*/.venv
+.vscode
+!Dockerfile
+.env
