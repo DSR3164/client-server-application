@@ -14,8 +14,8 @@ def get_connection():
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:36513")
-time = 0
-print("Ready to receive")
+time = datetime.today()
+print(f"Ready to receive: {time.strftime("%H:%M:%S %d.%m.%Y")}")
 
 try:
     while True:
